@@ -1,55 +1,93 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+title: "My Resume" # 站点标题
+description: "Welcome to my personal resume website!" # 站点描述
+author: "Your Name" # 站点作者
 
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+markdown: kramdown # 设置 Markdown 渲染器
+theme: minima # 使用 minima 主题
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Site URL (update this with your actual site URL)
+url: "https://ssy1895.github.io" # 站点 URL
+baseurl: "/my-resume" # 如果你使用了子目录（例如 GitHub Pages 下的子项目），请在这里设置
+
+# Social media links (可选，替换为你的社交媒体链接)
+social_links:
+  - name: "GitHub"
+    url: "https://github.com/ssy1895"
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/yourname"
+  - name: "Twitter"
+    url: "https://twitter.com/yourname"
+
+# Navigation
+header:
+  - text: "Home"
+    url: "/"
+  - text: "About"
+    url: "/about/"
+  - text: "Contact"
+    url: "/contact/"
+
+# Google Analytics (可选)
+# google_analytics: "UA-XXXXXXXXX-X"  # 将此行替换为你的 Google Analytics 跟踪代码
+
+# Posts configuration
+# Enable categories and tags for blog posts
+posts:
+  categories: true
+  tags: true
+
+# Enable archive pages (optional, for large blogs)
+paginate: 5 # 每页显示的文章数
+
+# Enable pagination for older posts
+paginate_path: "/page:num"
+
+# Show last updated date
+show_last_updated: true
+
+# Enable disqus comments (可选，如果需要评论功能)
+# disqus:
+#   shortname: "your-disqus-shortname" # 设置 Disqus 的短名称
+
+# Enable RSS feed (可选，如果你希望提供 RSS 订阅)
+feed:
+  path: "rss.xml"
+
+# Specify layout for different pages
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post" # 设置博客文章的布局为 'post'
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default" # 设置页面的布局为 'default'
+
+# Include custom styles (optional)
+# Uncomment and specify the path to your custom stylesheets if needed
+# css:
+#   - "assets/css/style.css"
+
+# Enable or disable the sidebar (optional, depending on the theme's layout)
+sidebar:
+  enable: true
+
+# Include footer settings (optional)
+footer:
+  copyright: "© 2024 Your Name. All rights reserved."
+  powered_by: "Powered by Jekyll & GitHub Pages"
+
+# Enable or disable search functionality (optional, for larger sites)
+# search:
+#   enable: true
+
+# Show social sharing buttons (optional)
+social_sharing: true
+
+# Enable or disable HTTPS (recommended)
+# enforce_https: true
